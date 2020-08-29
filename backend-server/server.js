@@ -5,9 +5,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv/config');
 
-app.get('/', (req,res)=> {
-    res.send('home page test');
-});
+app.use(cors());
+app.use(bodyParser.json());
 //import ROUTES
 const ticketRoutes = require('./controller/ticketRoutes')
 
@@ -21,4 +20,8 @@ mongoose.connect(mongodb,
     ()=> console.log('connected to mongo DB!')
     ).catch(err => console.log('DB Connection Error: ${err.message}'));
 
-app.listen(3000);
+app.use('/tickets', ticketRoutes);
+
+app.listen(3000,function(){
+    console.log('Server is running on...');
+});
