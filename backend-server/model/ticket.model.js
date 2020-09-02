@@ -14,6 +14,9 @@ let Ticket = new Schema({
     type: {
         type: String
     },
+    createDate: {
+        type: String
+    },
     dueDate: {
         type: Date
     },

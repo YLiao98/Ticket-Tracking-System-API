@@ -15,6 +15,7 @@ const mongodb = process.env.DB_CONNECTION;
 //connect mongodb
 mongoose.connect(mongodb,
     {useNewUrlParser: true,
+    useFindAndModify: false,
     useUnifiedTopology: true})
     .then(
     ()=> console.log('connected to mongo DB!')

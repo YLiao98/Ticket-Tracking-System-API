@@ -48,7 +48,7 @@ ticketRoutes.route('/:id/edit').put(function(req,res){
     });
 });
 
-ticketRoutes.route('/:id/edit').put(function(req,res){
+ticketRoutes.route('/:id/delete').delete(function(req,res){
     Ticket.findByIdAndRemove(req.params.id, function(err,ticket){
         if(err){
             return next(err);

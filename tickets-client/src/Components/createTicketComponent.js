@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import axios from "axios";
 
 class CreateTicket extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state={
             ticketTitle: '',
             ticketAuthor: '',
@@ -21,6 +21,7 @@ class CreateTicket extends Component{
         this.onChangeTicketType=this.onChangeTicketType.bind(this);
         this.onChangeTicketAssignedTo=this.onChangeTicketAssignedTo.bind(this);
         this.onChangeTicketDueDate=this.onChangeTicketDueDate.bind(this);
+        this.onSubmit=this.onSubmit.bind(this);
 
     }
 
@@ -39,7 +40,7 @@ class CreateTicket extends Component{
 
     onChangeTicketDescription(e){
         this.setState({
-            ticketAuthor: e.target.value
+            ticketDescription: e.target.value
         });
     }
 

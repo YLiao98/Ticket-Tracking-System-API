@@ -5,7 +5,9 @@ import {
   Link
 } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import CreateTicket from "./Components/createTicketComponent";
+import ViewTickets from "./Components/viewTicketsComponent";
+import EditTicket from "./Components/editTicketComponent";
 
 class App extends Component{
   render(){
@@ -28,10 +30,13 @@ class App extends Component{
           
             <Link to='/create' style={{margin:"5px"}}>
               <button type="button" class="btn btn-primary">
-                Submit ticket
+                Create Ticket Here
               </button>
             </Link>
         </div>
+        <Route path="/create" component = {CreateTicket}/>
+        <Route path="/" exact component = {ViewTickets}/>
+        <Route path="/:id/edit" component = {EditTicket}/>
       </Router>
         
     );
